@@ -1,29 +1,32 @@
 # MineExample
 使用caffe解决非图像问题的回归问题的一个例子。
 ## 文件列表
-###data/
+### data/
 hdf5数据文件和用于在solver中指定数据位置的text文件。
-###raw data/
+
+### raw data/
+
 原始数据，从raw data.xlsx文件中可以看到数据的含义。
-###net/
+### net/
+
 网络配置的prototxt文件,文件名注明训练网络各层的神经元个数。
-###solver/
+### solver/
 训练的solver文件,与net文件对应
-###writemine.py
+### writemine.py
 对数据进行归一化等预处理，写入hdf5数据,运行后生成3个文件:
 ```
 mine.h5:包含全部1599个数据
 train.h5：包含训练集的1000个数据
 test.h5：包含测试集的599个数据
 ```
-###demo.py
+### demo.py
 输入测试集数据计算预测值与实际值的相对误差。
 
-##运行方法
-###训练网络：
+## 运行方法
+### 训练网络：
 sudo ./build/tools/caffe train --solver examples/mine/solver/solver.prototxt 
 
-##测试方法
+## 测试方法
 在caffe根目录下运行
 ```
 sudo python a.py
@@ -51,17 +54,17 @@ a.py测试1000个训练数据，demo.py测试599个测试数据。
 # MineExample
 Use caffe to handle the regression problem and the input data is not image.
 
-##Document list
-###data/
+## Document list
+### data/
 The hdf5 data and the text file used for training solver prototxt.
-###row data/
+### row data/
 The row data in .xlsx format and text format. You can find the data's meaning in the xlsx file.
-###net/
+### net/
 The prototxt document that describes the net. From the name you can see how many layer are there in the net and 
 how many neurons in each layer.
-###solver/
+### solver/
 The solver document for each net prototxt.
-###writemine.py
+### writemine.py
 Create the hdf5 data from the file in the 'row data' folder. After running it, there will be 3 hdf5 data file:
 ```
   mine.h5, which includes 1599 sample;
